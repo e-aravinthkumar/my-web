@@ -19,9 +19,29 @@
 //   setTimeout(showSlides, 2000); // Change image every 2 seconds
 // }
 
+//Current Slide Bar
+/* 
 var swiper = new Swiper('.mySwiper', {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+  }); */
+
+  
+
+  let menuButton = document.querySelector('#menu-bar');
+  let sideBar = document.querySelector('#sideBar');
+  let overlay = document.querySelector('#overlay');
+
+  overlay.addEventListener('click', ()=>{
+    sideBar.classList.add('left-[-1000px]')
+    sideBar.classList.remove('left-0');
+    overlay.classList.toggle('hidden');
+  });
+
+  menuButton.addEventListener('click',()=>{
+    overlay.classList.remove('hidden');
+    sideBar.classList.add('left-0');
+    sideBar.classList.remove('left-[-1000px]');
   });
